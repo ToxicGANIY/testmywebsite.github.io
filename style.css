@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #0b0612;
+  font-family: monospace;
+}
+
+/* Фоновая картинка */
+.background {
+  position: fixed;
+  inset: 0;
+  background: url("images/bg.png") repeat;
+  opacity: 0.15;
+  animation: scrollBg 40s linear infinite;
+  z-index: -2;
+}
+
+/* Контейнер для скринов */
+.screens {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Один скрин */
+.screen {
+  position: absolute;
+  width: 280px;              /* было 220 */
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(184, 107, 255, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  pointer-events: auto;      /* нужно для hover */
+  cursor: zoom-in;
+  z-index: 10;
+}
+
+.screen:hover {
+  box-shadow: 0 0 45px rgba(184, 107, 255, 0.9);
+  z-index: 10;
+}
+
+#screamerBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #ff3d3d;
+  color: white;
+}
+
+#screamer {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  z-index: 50;
+}
+
+#screamerImg {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 25px red;
+}
+
+/* Кнопка */
+#next {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #6a00ff;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#next:hover {
+  background: #8b3dff;
+}
+
+@keyframes scrollBg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000px 1000px;
+  }
+}
+
+#bottomGif {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 10px; /* небольшой отступ от края */
+  z-index: 5; /* выше фона, ниже скринов и кнопок */
+  pointer-events: none;
+}
+
+#bottomGif img {
+  max-width: 50px; /* под размер экрана */
+  max-height: 50px;
+}
+
+#musicBtn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  background: #6a0dad;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#musicBtn, #fixikiBtn {
+  position: fixed;
+  top: 20px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 5;
+}
+
+#musicBtn {
+  left: 20px;
+  background: #6a0dad;
+}
+
+#fixikiBtn {
+  left: 300px; /* чуть правее кнопки музыки */
+  background: #ff8800;
+}
+
+#fixikiLog {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 150;
+  background: rgba(0,0,0,0.7);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#fixikiLog img {
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+#logoBg {
+  position: fixed;
+  inset: 0; /* занимает весь экран */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0; /* позади всего */
+  pointer-events: none; /* чтобы клики проходили сквозь лого */
+  opacity: 0.1; /* полупрозрачность, чтобы не мешало */
+}
+
+#logoBg img {
+  max-width: 50vw; /* масштабируем под экран */
+  max-height: 50vh;
+}
+
+#PrufBtn {
+  left: 70px; /* чуть правее кнопки музыки */
+  background: #00ff0d;
+  position: fixed;
+  top: 690px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 5;
+}
+
+#Prufshow {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 150;
+  background: rgba(0,0,0,0.7);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#disclaimerOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.999);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#disclaimerBox {
+  background: #222;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+}
+
+#captchaInput {
+  padding: 5px;
+  margin-top: 10px;
+  width: 80%;
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #6a0dad;
+  color: white;
+  cursor: pointer;
+}
