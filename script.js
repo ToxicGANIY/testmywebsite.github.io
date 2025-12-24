@@ -144,7 +144,8 @@ const bgTracks = [
   "sounds/track3.mp3",
   "sounds/track4.mp3",
   "sounds/track5.mp3",
-  "sounds/track6.mp3"
+  "sounds/track6.mp3",
+  "sounds/track7.mp3"
 ];
 
 const bgMusic = document.getElementById("bgMusic");
@@ -195,3 +196,65 @@ PrufBtn.addEventListener("click", () => {
   }
 });
 
+const bottomGif = document.getElementById("bottomGif");
+
+bottomGif.onclick = () => {
+  window.location.href = "./GvozdJUMP/index.html"; // ← сюда ссылка на нужную страницу
+};
+
+const canvas = document.getElementById("snowCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const numFlakes = 100;
+const flakes = [];
+
+for(let i = 0; i < numFlakes; i++){
+  flakes.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 4 + 1, // радиус
+    d: Math.random() * 1 + 0.5 // скорость
+  });
+}
+
+function drawFlakes() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = "white";
+  ctx.beginPath();
+  for(let i = 0; i < numFlakes; i++){
+    const f = flakes[i];
+    ctx.moveTo(f.x, f.y);
+    ctx.arc(f.x, f.y, f.r, 0, Math.PI*2, true);
+  }
+  ctx.fill();
+  moveFlakes();
+}
+
+function moveFlakes() {
+  for(let i = 0; i < numFlakes; i++){
+    const f = flakes[i];
+    f.y += f.d;
+    f.x += Math.sin(f.y * 0.01) * 2; // лёгкое колебание
+
+    if(f.y > canvas.height){
+      f.y = 0;
+      f.x = Math.random() * canvas.width;
+    }
+  }
+}
+
+function animateSnow() {
+  drawFlakes();
+  requestAnimationFrame(animateSnow);
+}
+
+animateSnow();
+
+// Подстраиваемся под ресайз
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});

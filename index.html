@@ -7,6 +7,7 @@
   <link rel="icon" href="images/ico.png" type="image/png">
 </head>
 <body>
+  <canvas id="snowCanvas"></canvas>
   <div class="background"></div>
  
 <button id="musicBtn">ВКЛЮЧАТЬ МУЗЯКУ!!!!!!!!!🎵</button>
@@ -15,27 +16,44 @@
 <button id="PrufBtn">ПРУФЫ БИЛЛИ</button> 
 
  
+<!-- ОВЕРЛЕЙ ДИСКЛЕЙМЕРА -->
 <div id="disclaimerOverlay">
-  <div id="disclaimerBox">
-    <h2>Внимание!</h2>
+
+  <div class="disclaimerBox">
+
+    <!-- КАПЧА (ГЛАВНОЕ) -->
+    <div class="captchaBox">
+      <h2>Внимание!</h2>
     <p>На сайте много плохих шуток, вы можете пострадать от передозировки кринжа! 😎</p>
 	<p>Нажимая на кнопку "ну ладушки" вы берёте на себя ответственность за своё здоровье! 🤑</p>
-    <button id="continueBtn">ну ладушки</button>
 
-    <!-- Капча изначально скрыта -->
-    <div id="captchaBox" style="display:none;">
       <p id="captchaQuestion"></p>
-      <input type="text" id="captchaInput" placeholder="Ваш ответ">
-      <button id="captchaBtn">Войти на сайт</button>
+      <input type="text" id="captchaInput" placeholder="Ответ">
+      <button id="captchaBtn">ну ладушки</button>
     </div>
+
+    <!-- ЛОГИН (ПОБОЧНЫЙ ПРИКОЛ) -->
+    <div class="loginBox">
+      <input type="text" id="loginInput" placeholder="Логин">
+      <input type="password" id="passwordInput" placeholder="Пароль">
+	  <div id="loginError" class="loginError">Неверный логин или пароль</div>
+      <button id="loginBtn">ты admin?</button>
+    </div>
+
   </div>
 </div>
+
+<!-- ВИДЕО -->
+<video id="secretVideo">
+  <source src="./video.mp4" type="video/mp4">
+</video>
+
 
 <script src="js/main.js"></script>
 <script src="js/disclaimer.js"></script>
 
 <div id="Prufshow" style="display:none;">
-<p>😥</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0ga-D8x2ddk?si=zsaVqCfFh6RqHLZN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 <div id="fixikiLog" style="display:none;">
