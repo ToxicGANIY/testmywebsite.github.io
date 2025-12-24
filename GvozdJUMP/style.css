@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+}
+
+#jumpBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 120px;
+    cursor: pointer;
+    display: none;
+}
+
+#cheatBtn {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 100px;
+    cursor: pointer;
+    opacity: 0.6;
+    display: none;
+}
+
+#cheatBtn.active {
+    opacity: 1;
+}
+
+#winOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+#nextLevelBtn {
+    width: 300px;
+    cursor: pointer;
+}
