@@ -267,7 +267,9 @@ canvas.addEventListener("click", e => {
 
     if (scene === SCENE.MENU) {
         if (hit(startBtn, x, y)) scene = SCENE.DIALOG;
-        if (hit(soonBtn, x, y)) alert("Скоро");
+        if (hit(soonBtn, x, y)) {
+    window.location.href = "Gvbozd254/index.html"; // <- путь на нужный HTML
+}
     }
 
     else if (scene === SCENE.DIALOG) {
