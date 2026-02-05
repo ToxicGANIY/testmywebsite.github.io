@@ -185,7 +185,9 @@ fixikiBtn.addEventListener("click", () => {
   }
 });
 
-const PrufBtn = document.getElementById("PrufBtn");
+document.getElementById("PrufBtn").onclick = () => {
+  window.location.href = "Allquotes/index.html"; // здесь путь на нужный HTML
+};
 const Prufshow = document.getElementById("Prufshow");
 
 PrufBtn.addEventListener("click", () => {
@@ -202,7 +204,6 @@ bottomGif.onclick = () => {
   window.location.href = "./GvozdJUMP/index.html"; // ← сюда ссылка на нужную страницу
 };
 
-const canvas = document.getElementById("snowCanvas");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
@@ -246,15 +247,9 @@ function moveFlakes() {
   }
 }
 
-function animateSnow() {
-  drawFlakes();
-  requestAnimationFrame(animateSnow);
-}
-
-animateSnow();
-
 // Подстраиваемся под ресайз
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+

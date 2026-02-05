@@ -185,7 +185,7 @@ body {
   left: 70px; /* чуть правее кнопки музыки */
   background: #00ff0d;
   position: fixed;
-  top: 690px;
+  top: 650px;
   padding: 10px 15px;
   border-radius: 6px;
   border: none;
@@ -290,12 +290,3 @@ body {
   display: none;
 }
 
-#snowCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none; /* чтобы клики проходили сквозь снег */
-  z-index: 5000; /* ставим поверх контента, но под оверлеями */
-}
