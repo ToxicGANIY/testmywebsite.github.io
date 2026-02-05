@@ -1,16 +1,88 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="viewport" content="user-scalable=no">
-        <link rel="icon" href="icon/icon.png" type="image/png">
-        <link rel="apple-touch-icon" href="icon/icon.png">
-        <link rel="stylesheet" type="text/css" href="css/game.css">
-        <title>GvozdПрыг2</title>
-    </head>
-    <body style="background-color: black">
-        <script type="text/javascript" src="js/main.js"></script>
-    </body>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Gvozd8001 Brainrot</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/ico.png" type="image/png">
+</head>
+<body>
+  <canvas id="snowCanvas"></canvas>
+  <div class="background"></div>
+ 
+<button id="musicBtn">ВКЛЮЧАТЬ МУЗЯКУ!!!!!!!!!🎵</button>
+<audio id="bgMusic"></audio>
+<button id="fixikiBtn">(НОВОЕ) ФИКСИКИ 🛠️</button> 
+<button id="PrufBtn">Все Цитаты</button> 
+
+ 
+<!-- ОВЕРЛЕЙ ДИСКЛЕЙМЕРА -->
+<div id="disclaimerOverlay">
+
+  <div class="disclaimerBox">
+
+    <!-- КАПЧА (ГЛАВНОЕ) -->
+    <div class="captchaBox">
+      <h2>Внимание!</h2>
+    <p>На сайте много плохих шуток, вы можете пострадать от передозировки кринжа! 😎</p>
+	<p>Нажимая на кнопку "ну ладушки" вы берёте на себя ответственность за своё здоровье! 🤑</p>
+
+      <p id="captchaQuestion"></p>
+      <input type="text" id="captchaInput" placeholder="Ответ">
+      <button id="captchaBtn">ну ладушки</button>
+    </div>
+
+    <!-- ЛОГИН (ПОБОЧНЫЙ ПРИКОЛ) -->
+    <div class="loginBox">
+      <input type="text" id="loginInput" placeholder="Логин">
+      <input type="password" id="passwordInput" placeholder="Пароль">
+	  <div id="loginError" class="loginError">Неверный логин или пароль</div>
+      <button id="loginBtn">ты admin?</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ВИДЕО -->
+<video id="secretVideo">
+  <source src="./video.mp4" type="video/mp4">
+</video>
+
+
+<script src="js/main.js"></script>
+<script src="js/disclaimer.js"></script>
+
+<div id="Prufshow" style="display:none;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0ga-D8x2ddk?si=zsaVqCfFh6RqHLZN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<div id="fixikiLog" style="display:none;">
+  <img src="images/fixiki.png" alt="Чейнджлог Фиксики">
+  <a href="https://mynickname.com/ToxicGANIY"><img src="https://mynickname.com/img.php?nick=ToxicGANIY&sert=22&text=t6" alt="Nickname ToxicGANIY" /></a> <a href="https://mynickname.com/zloigena666"><img src="https://mynickname.com/img.php?nick=zloigena666&sert=23&text=t2" alt="zloigena666" /></a>
+</div>
+  
+<div id="bottomGif">
+  <img src="images/67.gif" alt="67">
+</div>
+
+<div id="logoBg">
+  <img src="images/logo.png" alt="Лого сайта">
+</div>
+
+  <div class="screens">
+    <!-- картинки будут вставляться JS -->
+  </div>
+<button id="screamerBtn" title="Нажми для хаоса!">💥</button>
+<div id="screamer" style="display:none;">
+  <img id="screamerImg" src="" alt="screamer">
+  <audio id="screamerAudio"></audio>
+</div>
+  
+  <button id="next">ЕЩЁ</button>
+
+  <script src="script.js"></script>
+  
+ 
+</body>
+
 </html>
